@@ -2,10 +2,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <!-- Event snippet for Adicionar ao carrinho conversion page -->
+   <!-- Event snippet for Adicionar ao carrinho conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
-  gtag('event', 'conversion', {'send_to': 'AW-10857741671/KQqSCI3xisgDEOf6r7ko'});
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-10857741671/KQqSCI3xisgDEOf6r7ko',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
+
 
     <!-- Hotjar Tracking Code for https://protocolo-antibarriga.online/ -->
 <script>
